@@ -10,6 +10,7 @@
     --success-color: #00ff00;
     --error-color: #ff0000;
     --terminal-glow: 0 0 10px rgba(0, 255, 0, 0.7);
+    --terminal-glow-subtle: 0 0 5px rgba(0, 255, 0, 0.3);
     --terminal-box-shadow: 0 0 20px rgba(0, 255, 0, 0.4);
     --accent-color: #00ffff;
     --terminal-scanline: rgba(0, 0, 0, 0.1);
@@ -498,6 +499,22 @@ img {
     margin-bottom: 2rem;
 }
 
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact-text {
+    color: var(--text-light);
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: var(--terminal-glow-subtle);
+}
+
 .social-icons {
     display: flex;
     gap: 1.5rem;
@@ -688,7 +705,7 @@ img {
     display: block;
     text-transform: uppercase;
     letter-spacing: 1px;
-    text-shadow: var(--terminal-glow);
+    text-shadow: var(--terminal-glow-subtle);
 }
 
 .stat-value {
@@ -696,7 +713,7 @@ img {
     font-size: 1.2em;
     font-weight: 500;
     display: block;
-    text-shadow: var(--terminal-glow);
+    text-shadow: var(--terminal-glow-subtle);
 }
 
 .stat-value span {
@@ -872,8 +889,8 @@ img {
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 30px rgba(0, 255, 0, 0.4);
+    transform: none;
+    box-shadow: 0 0 40px rgba(0, 255, 0, 0.6), 0 0 80px rgba(0, 255, 0, 0.3);
 }
 
 .project-img {
@@ -1405,11 +1422,12 @@ img {
     2% { opacity: 0.8; }
     4% { opacity: 1; }
     19% { opacity: 1; }
-    21% { opacity: 0.4; }
+    21% { opacity: 0.7; }
     23% { opacity: 1; }
     80% { opacity: 1; }
-    83% { opacity: 0; }
+    83% { opacity: 0.6; }
     87% { opacity: 1; }
+    100% { opacity: 1; }
 }
 
 @keyframes rgb-shift {

@@ -23,13 +23,13 @@ function initTyped() {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const options = {
-                            strings: ["Hello, I am <span class='highlight' style='display:inline'>Phil</span> :D", "Welcome to my portfolio!"],
-                            typeSpeed: 80,
+                            strings: ["Hello, I am <span class='highlight' style='display:inline'>Phil</span> :D<br>Welcome to my portfolio!"],
+                            typeSpeed: 40,
                             backSpeed: 30,
                             backDelay: 1000,
                             startDelay: 1000,
-                            loop: true,
-                            showCursor: true,
+                            loop: false,
+                            showCursor: false,
                             cursorChar: '|',
                             smartBackspace: true,
                             onStringTyped: () => {
@@ -151,18 +151,47 @@ window.addEventListener('load', () => {
     setTimeout(animateSkills, 1000);
 });
 
-// project Filtering
+// project Filtering with multi select
+let activeFilters = new Set(['all']);
+
 filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-        // Update button
-        document.querySelector('.filter-btn.active').classList.remove('active');
-        btn.classList.add('active');
         const filter = btn.getAttribute('data-filter');
         
+        if (filter === 'all') {
+            //If "all" is clicked then clear other filters and activate only "all"
+            activeFilters.clear();
+            activeFilters.add('all');
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        } else {
+            // If another clicked, remove "All" if it's active
+            if (activeFilters.has('all')) {
+                activeFilters.delete('all');
+                document.querySelector('.filter-btn[data-filter="all"]').classList.remove('active');
+            }
+            
+            // Toggle filter
+            if (activeFilters.has(filter)) {
+                activeFilters.delete(filter);
+                btn.classList.remove('active');
+            } else {
+                activeFilters.add(filter);
+                btn.classList.add('active');
+            }
+            
+            // If no filters, activate 'All'
+            if (activeFilters.size === 0) {
+                activeFilters.add('all');
+                document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
+            }
+        }
+        
+        // Apply filters
         projectCards.forEach(card => {
             const category = card.getAttribute('data-category');
             
-            if (filter === 'all' || filter === category) {
+            if (activeFilters.has('all') || activeFilters.has(category)) {
                 card.style.display = 'block';
                 setTimeout(() => {
                     card.style.opacity = '1';
@@ -196,34 +225,6 @@ window.addEventListener('load', () => {
             text.appendChild(cursor);
         });
         
-        // simulate terminal typing effect
-        const elementsToAnimate = document.querySelectorAll('.about-text p, .project-description');
-        elementsToAnimate.forEach(element => {
-            const text = element.textContent;
-            element.textContent = '';
-            
-            let i = 0;
-            const typeWriter = () => {
-                if (i < text.length) {
-                    element.textContent += text.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, Math.random() * 10 + 10);
-                }
-            };
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        setTimeout(typeWriter, 500);
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.5,
-                rootMargin: "0px 0px -100px 0px"
-            });
-            
-            observer.observe(element);
-        });
     }, 500);
 });
 
