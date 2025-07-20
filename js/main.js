@@ -135,7 +135,7 @@ function updateActiveNavLink() {
 function animateSkills() {
     skillLevels.forEach(skill => {
         const skillPosition = skill.getBoundingClientRect().top;
-        const screenPosition = window.innerHeight / 1.8;
+        const screenPosition = window.innerHeight / 1;
         
         if (skillPosition < screenPosition) {
             const level = skill.getAttribute('data-level');
