@@ -21,8 +21,8 @@
                 <ul class="nav-links">
                     <li><a href="#home" class="active">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
                 </ul>
                 <div class="burger">
                     <div class="line1"></div>
@@ -48,10 +48,13 @@
                     <a href="#projects" class="btn primary-btn">View My Work</a>
                     <a href="#about" class="btn secondary-btn">About Me</a>
                 </div>
-                <div class="social-icons">
-                    <a href="https://github.com/Vnilabean" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/philippe-gonzalez-71b532171/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://tryhackme.com/p/vnilabean" target="_blank"><i class="fas fa-user-secret"></i></a>
+                <div class="contact-section">
+                    <p class="contact-text">Feel free to reach out</p>
+                    <div class="social-icons">
+                        <a href="https://github.com/Vnilabean" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/philippe-gonzalez-71b532171/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://tryhackme.com/p/vnilabean" target="_blank"><i class="fas fa-user-secret"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -67,7 +70,7 @@
                 <div class="stats-container">
                     <div class="stat-item">
                         <span class="stat-label">[THM_RANK]</span>
-                        <span class="stat-value">> Top 8%</span>
+                        <span class="stat-value">> Top 3%</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-label">[GITHUB_CONTRIBUTIONS]</span>
@@ -76,7 +79,7 @@
                     <div class="stat-item">
                         <span class="stat-label">[CERTIFICATIONS]</span>
                         <div class="stat-value">
-                            <span>> CompTIA A+ (In Progress)</span>
+                            <span>> CompTIA Security+ (In Progress)</span>
                             <span>> CompTIA Network+ (In Progress)</span>
                         </div>
                     </div>
@@ -85,6 +88,89 @@
                 <p>I am a dedicated software developer driven to create functional and innovative applications. I focus on writing clean, maintainable code that delivers impactful results.</p>
                 <p class="back">cat background.txt</p>
                 <p>Holding a BS in Software Development from the University of Utah, I built a strong understanding of fundamental computer science principles. My involvement in the Cybersecurity Club provided hands-on experience in threat mitigation. Through projects like the Host Intrusion Detection System (HIDS), I have developed expertise in areas including low-level system interaction, network security analysis, and building comprehensive full-stack solutions. I am skilled in leveraging this diverse background to develop secure and efficient software across various domains.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Projects  -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Digital.Creations</h2>
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="backend">Backend</button>
+                <button class="filter-btn" data-filter="cybersecurity">Cybersecurity</button>
+                <button class="filter-btn" data-filter="other">Tech</button>
+            </div>
+            <div class="projects-grid">
+
+
+                <!-- Project 1 -->
+                <div class="project-card" data-category="cybersecurity">
+                    <div class="project-img">
+                        <img src="img/projects/watchdog.jpeg" alt="Watchdog HIDS logo">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Watchdog_HIDS</h3>
+                        <p class="project-description">Watchdog Host Intrusion Detection System continuously monitors devices for signs of intrusion like unusual device behavior, malicious network access, and unauthorized access attempts in secure file locations, streaming this data to a self hosted central server for real time analysis.</p>
+                        <div class="project-tech">
+                            <span>Rust</span>
+                            <span>C#</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://watchdoghids.github.io" target="_blank" class="btn small-btn primary-btn">Website</a>
+                            <a href="https://github.com/orgs/WatchdogHIDS/repositories" target="_blank" class="btn small-btn secondary-btn">Source</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Project 2 -->
+                <div class="project-card" data-category="backend">
+                    <div class="project-img">
+                        <img src="img/projects/WebApp.png" alt="Python Web Chat Application">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Python_Web_Chat</h3>
+                        <p class="project-description">The PonyExpress is a messaging application that features a frontend built with React, Tailwind, and Vite. Its backend is a web API developed in Python using the FastAPI framework. The application facilitates user accounts, chat functionalities, and message exchange.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>React</span>
+                            <span>TypeScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" target="_blank" class="btn small-btn primary-btn">Demo(TBA)</a>
+                            <a href="https://github.com/Vnilabean/Chat-webapp" target="_blank" class="btn small-btn secondary-btn">Source</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Project 3 -->
+                <div class="project-card" data-category="other">
+                    <div class="project-img">
+                        <img src="img/projects/proto.png" alt="Project 3">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">MUD_Game</h3>
+                        <p class="project-description">Modernized MUD Game(Multi-User Dungeon) built on a robust, modular core. This project delivers a compelling multiplayer text based RPG experience with real-time player encounters in shared environments. Its key innovation lies in its flexible architecture, allowing seamless play through standard text clients while being ready for integration with diverse frontend applications.</p>
+                        <div class="project-tech">
+                            <span>Rust</span>
+                        </div>
+                        <div class="project-links">
+                            <a target="_blank" class="btn small-btn primary-btn">In Development</a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="projects-cta">
+                <a href="https://github.com/vnilabean" target="_blank" class="btn primary-btn">View All Archives</a>
             </div>
         </div>
     </section>
@@ -146,18 +232,59 @@
                     </div>
                 </div>
                 <div class="skill-category">
+                    <h3>Systems & Security</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Network Security</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" data-level="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Reverse Engineering</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" data-level="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Computer Architecture</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" data-level="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Encryption</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" data-level="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Cybersecurity</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" data-level="75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Digital Forensics</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" data-level="75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
                     <h3>Software Development</h3>
                     <div class="skill-items">
                         <div class="skill-item">
                             <span class="skill-name">Object-Oriented Programming</span>
                             <div class="skill-bar">
-                                <div class="skill-level" data-level="90%"></div>
+                                <div class="skill-level" data-level="80%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
                             <span class="skill-name">Agile Methodologies</span>
                             <div class="skill-bar">
-                                <div class="skill-level" data-level="85%"></div>
+                                <div class="skill-level" data-level="80%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
@@ -170,35 +297,6 @@
                             <span class="skill-name">Software Testing</span>
                             <div class="skill-bar">
                                 <div class="skill-level" data-level="75%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Systems & Security</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span class="skill-name">Computer Architecture</span>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-level="85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Network Security</span>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-level="80%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Cybersecurity</span>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-level="75%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Encryption</span>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-level="70%"></div>
                             </div>
                         </div>
                     </div>
@@ -235,90 +333,6 @@
             </div>
         </div>
     </section>
-
-
-
-
-    <!-- Projects  -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Digital.Creations</h2>
-            <div class="project-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="backend">Backend</button>
-                <button class="filter-btn" data-filter="cybersecurity">Cybersecurity</button>
-                <button class="filter-btn" data-filter="other">Tech</button>
-            </div>
-            <div class="projects-grid">
-
-
-                <!-- Project 1 -->
-                <div class="project-card" data-category="cybersecurity">
-                    <div class="project-img">
-                        <img src="img/projects/watchdog.jpeg" alt="Watchdog HIDS logo">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Watchdog_HIDS</h3>
-                        <p class="project-description">Watchdog Host Intrusion Detection System continuously monitors devices for signs of intrusion like unusual device behavior, malicious network access, and unauthorized access attempts in secure file locations, streaming this data to a self hosted central server for real time analysis.</p>
-                        <div class="project-tech">
-                            <span>Rust</span>
-                            <span>C#</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://watchdoghids.github.io" target="_blank" class="btn small-btn primary-btn">Website</a>
-                            <a href="https://github.com/orgs/WatchdogHIDS/repositories" target="_blank" class="btn small-btn secondary-btn">Source</a>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- Project 2 -->
-                <div class="project-card" data-category="backend">
-                    <div class="project-img">
-                        <img src="img/projects/project2.jpg" alt="Project 2">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">TBA</h3>
-                        <p class="project-description">TBA</p>
-                        <div class="project-tech">
-                            <span>TBA</span>
-                            <span>TBA</span>
-                            <span>TBA</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" target="_blank" class="btn small-btn primary-btn">Demo</a>
-                            <a href="#" target="_blank" class="btn small-btn secondary-btn">Source</a>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- Project 3 -->
-                <div class="project-card" data-category="other">
-                    <div class="project-img">
-                        <img src="img/projects/project3.jpg" alt="Project 3">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">MUD_Game</h3>
-                        <p class="project-description">Modernized MUD Game(Multi-User Dungeon) built on a robust, modular core. This project delivers a compelling multiplayer text based RPG experience with real-time player encounters in shared environments. Its key innovation lies in its flexible architecture, allowing seamless play through standard text clients while being ready for integration with diverse frontend applications.</p>
-                        <div class="project-tech">
-                            <span>Rust</span>
-                        </div>
-                        <div class="project-links">
-                            <a target="_blank" class="btn small-btn primary-btn">In Development</a>
-                        </div>
-                    </div>
-                </div>
-
-
-
-            </div>
-            <div class="projects-cta">
-                <a href="https://github.com/vnilabean" target="_blank" class="btn primary-btn">View All Archives</a>
-            </div>
-        </div>
-    </section>
-
 
 
     <!-- foot -->
